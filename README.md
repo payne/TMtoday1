@@ -1,6 +1,10 @@
 Playing with a utility for who's doing what at a toastmasters meeting.  
 
-Ideas:
+
+### live URL: https://payne.github.io/TMtoday1/index.html
+
+
+## Ideas:
 1. menu item to show everyone who has a duty
 1. menu item showing just speakers
 1. menu item showing just evaluators
