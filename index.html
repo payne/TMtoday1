@@ -37,7 +37,7 @@
                     <li class="nav-item">
                         <!-- TODO(MGP): JavaScript show / hide divs instead of going to github. -->
                         <a class="nav-link" 
-                          onClick="yourFunction(); return false;"
+                          onClick="showEvaluators(); return false;"
                           href="http://fontenele.github.io/bootstrap-navbar-dropdowns/"
                            target="_blank">Speakers</a>
                     </li>
@@ -46,7 +46,7 @@
         </div>
 
         <main role="main" class="container">
-          <div class="jumbotron">
+          <div class="jumbotron" id="all">
             <h2>
             <ol>
               <li>TM: Matt</li>
@@ -61,6 +61,15 @@
               <li>E: Matt</li>
               <li>E: Matt</li>
               <li>BC: Matt</li>
+            </ol>
+            </h2>
+          </div>
+          <div class="jumbotron" id="speakers">
+            <h2>
+            <ol>
+              <li>S: Matt</li>
+              <li>S: Matt</li>
+              <li>S: Matt</li>
             </ol>
             </h2>
           </div>
