@@ -9,6 +9,8 @@ Playing with a utility for who's doing what at a toastmasters meeting.
 1. menu item showing just speakers
 1. menu item showing just evaluators
 1. Drop down list for choosing the day (defaults to today or next upcoming meeting)
+1. Menu item linking to github source code
+1. Menu item to display a QR Code that links to the online web page
 
 Here's a screen grab of the first baby step:
 
