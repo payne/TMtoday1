@@ -58,7 +58,20 @@ processData = (data) => {
   rolePeople.forEach((person) => {
     roleToPerson[person.mrole] = person.name;
   });
+  buildList(rolePeople);
+};
 
+buildList = (rolePeople) => {
+  for (const role in meetingOrder) {
+    rolePeople.forEach((person) => {
+      if (person.mrole === role) {
+        addListItem('list_all', `${person.mrole}: ${person.name}`);
+      }
+    });
+  }
+}
+
+buildListOLD = (rolePeople) => {
   const allList = document.getElementById('list_all');
   rolePeople.forEach((person) => {
     const li = document.createElement('li');
@@ -66,6 +79,14 @@ processData = (data) => {
     li.appendChild(t);
     allList.appendChild(li);
   });
+}
+
+addListItem = (listId, text) => {
+  const list = document.getElementById(listId);
+  const li = document.createElement('li');
+  const t = document.createTextNode(text);
+  li.appendChild(t);
+  list.appendChild(li);
 }
 
 getData = () => {
