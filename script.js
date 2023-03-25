@@ -26,7 +26,7 @@ getData = () => {
 };
 
 document.onreadystatechange = () => {
-  if (document.readyState === "interactive") {
+  if (document.readyState === "complete") {
     // initApplication();
     getData();
     console.table(d);
