@@ -1,4 +1,18 @@
 const divList = ['all', 'speakers', 'qrcode', 'version'];
+const meetingOrder = {
+                      'PO': 'Presiding Officer',
+                      'I': 'Invocator',
+                      'GR': 'Grammarian',
+                      'J': 'Jester',
+                      'TT': 'Table Topics',
+                      'T': 'Timer', 
+                      'TM': 'Toastmaster',
+                      'CE': 'General Evaluator',
+                      'S': 'Speaker',
+                      'E': 'Evaluator',
+                      'BC': 'Vote Counter',
+                      'GT': 'Grunt Tabulator'
+                    }
 let d = "" // holds speaker data
 
 function showSpeakers() {
@@ -39,6 +53,12 @@ processData = (data) => {
   }).filter((person) => person.mrole !== undefined && person.mrole !== "");
   console.log(rolePeople);
   console.log(`That ^^^ is the rolePeople array`);
+
+  const roleToPerson = {};
+  rolePeople.forEach((person) => {
+    roleToPerson[person.mrole] = person.name;
+  });
+
   const allList = document.getElementById('list_all');
   rolePeople.forEach((person) => {
     const li = document.createElement('li');
