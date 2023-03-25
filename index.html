@@ -37,11 +37,16 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <!-- TODO(MGP): JavaScript show / hide divs instead of going to github. -->
                         <a class="nav-link" 
                           onClick="showSpeakers(); return false;"
                           href="http://fontenele.github.io/bootstrap-navbar-dropdowns/"
                            target="_blank">Speakers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" 
+                          onClick="showDates(); return false;"
+                          href="http://fontenele.github.io/bootstrap-navbar-dropdowns/"
+                           target="_blank">Meeting Dates</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" 
@@ -74,11 +79,17 @@
           </div>
           <div class="jumbotron" id="speakers" hidden>
             <h2>
-            <ol>
-              <li>S: Matt</li>
-              <li>S: Matt</li>
-              <li>S: Matt</li>
-            </ol>
+            <ul id="speakers_all">
+              <!-- Gets filled in by script.js -->
+            </ul>
+            </h2>
+          </div>
+          <div hidden id="meeting_dates">
+            <h2>
+              <label for="meeting_date_select">Meeting Date:</label>
+              <select id="meeting_date_select">
+                <!-- Gets filled in by script.js -->
+              </select>
             </h2>
           </div>
           <div class="jumbotron" id="qrcode" hidden>

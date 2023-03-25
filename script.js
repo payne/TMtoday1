@@ -1,4 +1,4 @@
-const divList = ['all', 'speakers', 'qrcode', 'version'];
+const divList = ['all', 'speakers', 'qrcode', 'version','meeting_dates'];
 const meetingOrder = {
                       'PO': 'Presiding Officer',
                       'I': 'Invocator',
@@ -31,6 +31,10 @@ function showVersion() {
   show('version');
 }
 
+function showDates() {
+  show('meeting_dates');
+}
+
 function show(showId) {
   console.log('click the link');
   divList.forEach((divId) => {
@@ -41,6 +45,22 @@ function show(showId) {
       divElement.hidden = true;
     }
   });
+}
+
+
+fillInMeetingDateChoices = (data) => {
+   d = data;
+   const meetingSelector = document.getElementById("meeting_date_select");
+   const person = d[0];
+   for (const key in person) {
+     if (key !== 'First Name' && key !== 'Last Name') {
+      const option = document.createElement('option');
+      option.text = key;
+      meetingSelector.add(option);
+      debugger;
+      console.log(`Added ${key} to meetingSelector`);
+     }
+   }
 }
 
 processData = (data) => {
@@ -66,6 +86,9 @@ buildList = (rolePeople) => {
     rolePeople.forEach((person) => {
       if (person.mrole === role) {
         addListItem('list_all', `${person.mrole}: ${person.name}`);
+        if ((role === 'S') || (role === 'E')) {
+          addListItem('speakers_all', `${person.mrole}: ${person.name}`);
+        }
       }
     });
   }
@@ -92,7 +115,10 @@ addListItem = (listId, text) => {
 getData = () => {
   fetch("https://payne.github.io/TMtoday1/tm.json")
   .then((response) => response.json())
-  .then((data) => processData(data));
+  .then((data) => {
+    fillInMeetingDateChoices(data);
+    processData(data)
+  });
 };
 
 document.onreadystatechange = () => {
