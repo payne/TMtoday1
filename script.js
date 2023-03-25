@@ -1,5 +1,4 @@
-
-const divList = ['all', 'speakers', 'qrcode'];
+const divList = ['all', 'speakers', 'qrcode', 'version'];
 let d = "" // holds speaker data
 
 function showSpeakers() {
@@ -12,6 +11,10 @@ function showAll() {
 
 function showQrCode() {
   show('qrcode');
+}
+
+function showVersion() {
+  show('version');
 }
 
 function show(showId) {
