@@ -1,4 +1,6 @@
 
+
+
 function showSpeakers() {
   showHide('speakers', 'all');
 }
@@ -15,4 +17,19 @@ function showHide(showId, hideId) {
   hideElement.hidden = true;
 }
 
+let d = ""
 
+getData = () => {
+  fetch("https://payne.github.io/TMtoday1/tm.json")
+  .then((response) => response.json())
+  .then((data) => d = data);
+};
+
+document.onreadystatechange = () => {
+  if (document.readyState === "interactive") {
+    // initApplication();
+    getData();
+    console.table(d);
+    console.log(d);
+  }
+};
