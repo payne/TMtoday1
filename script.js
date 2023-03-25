@@ -1,3 +1,4 @@
+let meetingDate = '4/5'; //TODO: use today's date to get the meeting date
 const divList = ['all', 'speakers', 'qrcode', 'version','meeting_dates'];
 const meetingOrder = {
                       'PO': 'Presiding Officer',
@@ -61,11 +62,16 @@ fillInMeetingDateChoices = (data) => {
       console.log(`Added ${key} to meetingSelector`);
      }
    }
-}
+};
+
+dateChange = () => {
+   const meetingSelector = document.getElementById("meeting_date_select");
+   meetingDate = meetingSelector.value;
+   processData(d);
+};
 
 processData = (data) => {
   d = data;
-  const meetingDate = '4/5';
   const rolePeople = d.map((person) => { 
     const name = `${person['First Name']} ${person['Last Name'].substring(0,1)}`;
     const mrole = person[meetingDate];
