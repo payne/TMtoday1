@@ -1,20 +1,28 @@
 
-
+const divList = ['all', 'speakers', 'qrcode'];
 
 function showSpeakers() {
-  showHide('speakers', 'all');
+  show('speakers');
 }
 
 function showAll() {
-  showHide('all', 'speakers');
+  show('all');
 }
 
-function showHide(showId, hideId) {
+function showQrCode() {
+  show('qrcode');
+}
+
+function show(showId) {
   console.log('click the link');
-  const hideElement = document.getElementById(hideId);
-  const showElement = document.getElementById(showId);
-  showElement.hidden = false;
-  hideElement.hidden = true;
+  divList.forEach((divId) => {
+    const divElement = document.getElementById(divId);
+    if (divId === showId) {
+      divElement.hidden = false;
+    } else {
+      divElement.hidden = true;
+    }
+  });
 }
 
 let d = ""
