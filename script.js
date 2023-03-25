@@ -1,5 +1,6 @@
 
 const divList = ['all', 'speakers', 'qrcode'];
+let d = "" // holds speaker data
 
 function showSpeakers() {
   show('speakers');
@@ -25,12 +26,24 @@ function show(showId) {
   });
 }
 
-let d = ""
+processData = (data) => {
+  d = data;
+  const meetingDate = '4/5';
+  const rolePeople = d.map((person) => { 
+    const name = `${person['First Name']} ${person['Last Name'].substring(0,1)}`;
+    const mrole = person[meetingDate]
+    return {name, mrole};
+  }).filter((person) => person.mrole !== undefined && person.mrole !== "");
+  console.log(rolePeople);
+  console.log(`That ^^^ is the rolePeople array`);
+}
+
+
 
 getData = () => {
   fetch("https://payne.github.io/TMtoday1/tm.json")
   .then((response) => response.json())
-  .then((data) => d = data);
+  .then((data) => processData(data));
 };
 
 document.onreadystatechange = () => {
