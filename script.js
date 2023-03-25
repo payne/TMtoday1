@@ -31,14 +31,19 @@ processData = (data) => {
   const meetingDate = '4/5';
   const rolePeople = d.map((person) => { 
     const name = `${person['First Name']} ${person['Last Name'].substring(0,1)}`;
-    const mrole = person[meetingDate]
+    const mrole = person[meetingDate];
     return {name, mrole};
   }).filter((person) => person.mrole !== undefined && person.mrole !== "");
   console.log(rolePeople);
   console.log(`That ^^^ is the rolePeople array`);
+  const allList = document.getElementById('list_all');
+  rolePeople.forEach((person) => {
+    const li = document.createElement('li');
+    const t = document.createTextNode(`${person.name} - ${person.mrole}`);
+    li.appendChild(t);
+    allList.appendChild(li);
+  });
 }
-
-
 
 getData = () => {
   fetch("https://payne.github.io/TMtoday1/tm.json")
