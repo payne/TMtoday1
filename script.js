@@ -54,6 +54,8 @@ processData = (data) => {
 };
 
 buildList = (rolePeople) => {
+  clearList('list_all');
+  clearList('speakers_all');
   for (const role in meetingOrder) {
     rolePeople.forEach((person) => {
       if (person.mrole === role) {
@@ -73,6 +75,13 @@ addListItem = (listId, text) => {
   li.appendChild(t);
   list.appendChild(li);
 }
+
+clearList = (divId) => {
+  const la = document.getElementById(divId);
+  const nodes_to_delete = []
+  la.childNodes.forEach(n => nodes_to_delete.push(n));
+  nodes_to_delete.forEach(n => n.remove());
+};
 
 getData = () => {
   fetch("https://payne.github.io/TMtoday1/tm.json")
