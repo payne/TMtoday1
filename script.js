@@ -87,6 +87,8 @@ getData = () => {
   fetch("https://payne.github.io/TMtoday1/tm.json")
   .then((response) => response.json())
   .then((data) => {
+    let num = 0;
+    data = data.map(i => { i.n = num; num++; return i; });
     fillInMeetingDateChoices(data);
     processData(data)
   });
