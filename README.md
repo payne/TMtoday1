@@ -3,11 +3,14 @@ Playing with a utility for who's doing what at a toastmasters meeting.
 
 ### live URL: https://payne.github.io/TMtoday1/index.html
 
-
 ## Ideas:
-1. menu item to show everyone who has a duty
-1. menu item showing just speakers
-1. menu item showing just evaluators
+
+### TODOs:
+1. Click on a name and see upcoming duties
+
+### Done:
+1. Menu item to show everyone who has a duty
+1. Menu item showing just speakers & evaluators
 1. Drop down list for choosing the day (defaults to today or next upcoming meeting)
 1. Menu item linking to github source code
 1. Menu item to display a QR Code that links to the online web page
