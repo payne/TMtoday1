@@ -1,4 +1,4 @@
-let meetingDate = '3/39'; //TODO: use today's date to get the meeting date
+let meetingDate = '4/5'; //TODO: use today's date to get the meeting date
 const divList = ['all', 'speakers', 'qrcode', 'version','meeting_dates'];
 const meetingOrder = {
                       'PO': 'Presiding Officer',
