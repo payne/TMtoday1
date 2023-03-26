@@ -50,12 +50,21 @@ processData = (data) => {
   rolePeople.forEach((person) => {
     roleToPerson[person.mrole] = person.name;
   });
+  console.log(`meetingDate = ${meetingDate}`);
   buildList(rolePeople);
+};
+
+setText = (divId, textString) => { 
+  const e = document.getElementById(divId);
+  const t = document.createTextNode(textString);
+  const oldNode = e.childNodes[0];
+  e.replaceChild(t, oldNode);
 };
 
 buildList = (rolePeople) => {
   clearList('list_all');
   clearList('speakers_all');
+  setText('list_all_meeting_date', meetingDate);
   for (const role in meetingOrder) {
     rolePeople.forEach((person) => {
       if (person.mrole === role) {
@@ -131,7 +140,5 @@ function show(showId) {
       divElement.hidden = true;
     }
   });
-}
+};
 
-
-;
