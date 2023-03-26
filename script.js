@@ -45,6 +45,8 @@ processData = (data) => {
   }).filter((person) => person.mrole !== undefined && person.mrole !== "");
   console.log(rolePeople);
   console.log(`That ^^^ is the rolePeople array`);
+  console.log(`meetingDate=${meetingDate}`);
+  console.log(`data:`); console.log(data);
 
   const roleToPerson = {};
   rolePeople.forEach((person) => {
@@ -65,6 +67,7 @@ buildList = (rolePeople) => {
   clearList('list_all');
   clearList('speakers_all');
   setText('list_all_meeting_date', meetingDate);
+  setText('speakers_meeting_date', meetingDate);
   for (const role in meetingOrder) {
     rolePeople.forEach((person) => {
       if (person.mrole === role) {
