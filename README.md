@@ -7,6 +7,9 @@ Playing with a utility for who's doing what at a toastmasters meeting.
 
 ### TODOs:
 1. Click on a name and see upcoming duties
+1. Idea from John F -- a button or menu item to show who does not have a duty today
+1. Automatically pull up the next toastmaster day
+1. Previous & next meeting links
 
 ### Done:
 1. Menu item to show everyone who has a duty
